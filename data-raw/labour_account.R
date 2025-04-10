@@ -3,6 +3,7 @@ library(purrr)
 library(readabs)
 library(dplyr)
 library(lubridate)
+library(tidyr)
 
 urls <- get_available_files("labour-account-australia") |> 
   filter(label != "Industry summary table") |> 
@@ -21,12 +22,13 @@ labour_account <- read_abs_local(filenames = urls,
   separate(series, 
            into = c("prefix", "indicator", "state", "industry"),
            sep = ";",
-           extra = "drop") %>%
+           extra = "drop") |> 
   mutate(across(where(is.character), trimws),
          industry = gsub("(.\\([A-S]\\))", x = industry, replacement = ""),
          year = year(date),
          month = month(date, abbr = FALSE, label = TRUE)) |> 
   filter(!grepl(" - Percentage changes", indicator),
+         table_title != "Table 22 Revisions Table",
          !is.na(value))  |> 
   select("date", 
          "month", 
