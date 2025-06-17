@@ -1,10 +1,9 @@
-Package: aitidata
-Title: Commonly Used Data for AITI Research
+Package: amwudata
+Title: Commonly Used Data for AMWU-NRC Research
 Version: 0.1.1
 Authors@R: 
-    person("Hamish", "Gamble", , "hamish.gamble@flinders.edu.au", role = c("aut", "cre"))
-Description: A collection of datasets commonly used in research at the
-    Australian Industrial Transformation Institute at Flinders University.
+    person("Hamish", "Gamble", , "hamish.gamble@amwu.org.au", role = c("aut", "cre"))
+Description: A collection of datasets commonly used in research for the NRC at the AMWU.
     Data has been tidyed and simplified for ease of use, and for easy
     integration into the reportabs package.
 License: CC0
