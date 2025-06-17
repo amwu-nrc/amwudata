@@ -5,6 +5,7 @@ library(stringr)
 library(usethis)
 library(tidyr)
 library(lubridate)
+library(readxl)
 library(strayr)
 
 
@@ -117,7 +118,7 @@ eq6 <- read_excel(path = "data-raw/EQ06.xlsx",
 
 industry_employment_detailed <- left_join(eq6, anzsic2006 |> distinct(anzsic_division, anzsic_subdivision, anzsic_group)) |> 
   distinct() |> 
-  group_by(date, indicator, sex, state, anzsic_subdivision, anzsic_division) |> 
+  group_by(date, indicator, sex, state, anzsic_group, anzsic_subdivision, anzsic_division) |> 
   summarise(value = sum(value), 
             .groups = "drop") |> 
   mutate(value = value * 1000,
