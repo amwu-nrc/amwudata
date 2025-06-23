@@ -133,6 +133,25 @@
 #' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
 "labour_force"
 
+#' ABS Labour Force Survey - 12 month series
+#'
+#' A dataset containing monthly national and sub-national labour force
+#' indicators for the previous 12 months.
+#'
+#' @format A data frame with 10 variables:
+#' \describe{
+#' \item{date}{date of survey}
+#' \item{sex}{sex of individual surveyed: persons, male, or female}
+#' \item{state}{state or territory (including Australia)}
+#' \item{series_type}{level of adjustment of original data: original (no adjustment), seasonally adjusted, or trend}
+#' \item{unit}{unit of measurement for indicator}
+#' \item{indicator}{labour force indicator}
+#' \item{value}{value of labour force indicator}
+#' }
+#'
+#' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
+"labour_force_briefing"
+
 #' ABS Weekly Payroll Index
 #'
 #' ABS Weekly Payroll data since 4th January 2020.
@@ -140,15 +159,48 @@
 #' @format A dataframe with 6 variables:
 #' \describe{
 #' \item{date}{Date}
-#' \item{gender}{Gender}
+#' \item{industry}{Industry}
 #' \item{age}{Age group}
 #' \item{state}{State}
-#' \item{industry}{Industry}
 #' \item{value}{Value}
+#' \item{series}{Series}
 #' }
 #'
 #' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6160.0.55.001}
 "payroll_index"
+
+#' ABS Weekly Payroll Index - Business Size
+#'
+#' ABS Weekly Payroll data since 4th January 2020.
+#'
+#' @format A dataframe with 6 variables:
+#' \describe{
+#' \item{date}{Date}
+#' \item{emp_size}{Size of Business (Employment)}
+#' \item{age}{Age group}
+#' \item{state}{State}
+#' \item{value}{Value}
+#' \item{series}{Series}
+#' }
+#'
+#' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6160.0.55.001}
+"payroll_index_business"
+
+#' ABS Weekly Payroll Index - Industry
+#'
+#' ABS Weekly Payroll data since 4th January 2020.
+#'
+#' @format A dataframe with 6 variables:
+#' \describe{
+#' \item{date}{Date}
+#' \item{industry}{Industry}
+#' \item{industry_subdivision}{Industry Subdivision}
+#' \item{value}{Value}
+#' \item{series}{Series}
+#' }
+#'
+#' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6160.0.55.001}
+"payroll_index_industry"
 
 #' DESE Small (SA2) Area Labour Market 
 #'
