@@ -10,7 +10,7 @@ library(usethis)
 
 get_file_urls <- function(url) {
   tibble(
-    read_html(url) |> 
+    url = read_html(url) |> 
       html_nodes("#dataset-resources a") |> 
       html_attr("href")) |> 
     filter(grepl(".xlsx", url)) %>%
@@ -53,12 +53,13 @@ read_jobseeker <- function(url, date) {
   
 }
 
-if (is.na(pluck(files(), "result"))) {
+if (any(is.na(pluck(files(), "result")))) {
   
   message("data.gov.au files are unavailable right now.")
   
 } else {
-jobseeker_sa2 <- map2(.x = files$url,
+  files <- files()$result
+  jobseeker_sa2 <- map2(.x = files$url,
                       .y = files$date,
                       .f = function(x,y) read_jobseeker(x, y)) |> 
   list_rbind()
