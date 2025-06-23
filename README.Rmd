@@ -9,6 +9,7 @@ library(dplyr)
 library(purrr)
 library(stringr)
 library(lazyeval)
+library(amwudata)
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -18,8 +19,8 @@ knitr::opts_chunk$set(
 )
 
 write_metadata <- function() {
- included_data <-  data.frame(ls("package:aitidata")) |> 
-   mutate(Item = paste0("aitidata::", Item))
+ included_data <-  data.frame(ls("package:amwudata")) |> 
+   mutate(Item = paste0("amwudata::", Item))
  
  safe_max <- safely(.f = ~lazy_eval(.x) |> pull(date) |> max(),
                     otherwise = NA)
@@ -34,7 +35,7 @@ write_metadata <- function() {
  date_max <- data.frame(date_max)
 
  bind_cols(included_data, date_max) |> 
-   mutate(Item = str_remove_all(Item, "aitidata::")) |> 
+   mutate(Item = str_remove_all(Item, "amwudata::")) |> 
    rename("Data Name" = Item,
           "Description" = Title,
           "Most Recent Data" = date_max) |>   
@@ -45,11 +46,11 @@ write_metadata <- function() {
 
 ```
 
-# aitidata
+# AMWU Relevant Data
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/aiti-flinders/aitidata/actions/workflows/R-CMD-check.yaml/badge.svg?branch=data_prep)](https://github.com/aiti-flinders/aitidata/actions/workflows/R-CMD-check.yaml)
-[![update-abs](https://github.com/aiti-flinders/aitidata/workflows/update-abs/badge.svg)](https://github.com/aiti-flinders/aitidata/actions)
+[![R-CMD-check](https://github.com/amwu-nrc/amwudata/actions/workflows/R-CMD-check.yaml/badge.svg?branch=data_prep)](https://github.com/amwu-nrc/amwudata/actions/workflows/R-CMD-check.yaml)
+[![update-abs](https://github.com/amwu-nrc/amwudata/workflows/update-abs/badge.svg)](https://github.com/amwu-nrc/amwudata/actions)
 
 <!-- badges: end -->
 
