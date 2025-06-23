@@ -24,13 +24,14 @@ jobs:
       - name: Update data
         run: |
           Rscript -e "source('data-raw/update_abs.R')"
-      - name: Commit new data and Pull Request
-        uses: peter-evans/create-pull-request@v3
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           commit-message: Scheduled data update
-          committer: Hamish Gamble <hamish.gamble@amwu.org.au>
           title: "Scheduled data updates"
           labels: automated pr
           branch: data-updates
+          assignees: hamgamb
 
 
