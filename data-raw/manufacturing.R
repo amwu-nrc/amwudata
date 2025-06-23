@@ -37,4 +37,6 @@ aus_manufacturing <- read_excel(abs_file,
   filter(!is.na(value),
          !is.na(industry))
 
+file.remove(abs_file)
+
 use_data(aus_manufacturing, overwrite = TRUE, compress = "xz")
