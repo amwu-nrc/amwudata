@@ -4,6 +4,7 @@ on:
     branches: [main, master]
     paths:
       - "data-raw/**"
+      - ".github/**"
   schedule:
       - cron: '45 0 * * 1-5'
 jobs:
@@ -23,11 +24,13 @@ jobs:
       - name: Update data
         run: |
           Rscript -e "source('data-raw/update_abs.R')"
-      - name: Commit new data
-        run: |
-          git config --global user.name 'Hamish Gamble'
-          git config --global user.email 'hamish.gamble@amwu.org.au'
-          git add .
-          git commit -m 'Scheduled data updates' || echo "No changes to commit"
-          git push || echo "No changes to commit"
+      - name: Commit new data and Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Scheduled data update
+          committer: Hamish Gamble <hamish.gamble@amwu.org.au>
+          title: "Scheduled data updates"
+          labels: automated pr
+          branch: data-updates
+
 
