@@ -24,11 +24,6 @@ labour_force_status <- raw |>
                   remove_nas = TRUE) 
 
 
-
-
-
-
-
 underutilisation_aus <- raw |> 
   filter(table_no == 6202022) |> 
   separate_series(column_names = c("indicator", "sex", "age"), 
