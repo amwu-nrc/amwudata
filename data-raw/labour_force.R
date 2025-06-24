@@ -16,7 +16,7 @@ states <- c(
 )
 
 
-raw <- read_abs(cat_no = "6202.0", tables = c("12", "12a", "19", "19a", "22", "23", "23a"), retain_files = FALSE)
+raw <- read_abs(cat_no = "6202.0", tables = c("12", "12a", "22", "23", "23a"), retain_files = FALSE)
 
 labour_force_status <- raw |> 
   filter(table_no == "6202012" | table_no == "6202012a") |> 
@@ -25,14 +25,7 @@ labour_force_status <- raw |>
 
 
 
-hours_worked <- raw  |> 
-  filter(table_no == "6202019" | table_no == "6202019a") |> 
-  separate(series, 
-           into = c("indicator", "sex", "state"), 
-           sep = ";") |> 
-  mutate(across(c("indicator", "sex"), ~ trimws(gsub(">", "", .))),
-                state = ifelse(sex %in%  states, sex, "Australia"),
-                sex = ifelse(sex %in% states, "Persons", sex))
+
 
 
 
@@ -60,5 +53,4 @@ labour_force <- bind_rows(list(labour_force_status, underutilisation_aus, underu
                 value = ifelse(value == "000", value*1000, value)) |> 
   distinct(date, indicator, sex, state, series_type, unit, age, value) 
 
-use_data(hours_worked, overwrite = TRUE, compress = "xz")
 use_data(labour_force, overwrite = TRUE, compress = "xz")
