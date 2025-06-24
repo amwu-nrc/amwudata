@@ -1,22 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# aitidata
+# AMWU Relevant Data
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/aiti-flinders/aitidata/actions/workflows/R-CMD-check.yaml/badge.svg?branch=data_prep)](https://github.com/aiti-flinders/aitidata/actions/workflows/R-CMD-check.yaml)
-[![update-abs](https://github.com/aiti-flinders/aitidata/workflows/update-abs/badge.svg)](https://github.com/aiti-flinders/aitidata/actions)
+[![R-CMD-check](https://github.com/amwu-nrc/amwudata/actions/workflows/R-CMD-check.yaml/badge.svg?branch=data_prep)](https://github.com/amwu-nrc/amwudata/actions/workflows/R-CMD-check.yaml)
+[![update-abs](https://github.com/amwu-nrc/amwudata/workflows/update-abs/badge.svg)](https://github.com/amwu-nrc/amwudata/actions)
 
 <!-- badges: end -->
 
-`aitidata` is a collection of data sets commonly used by researchers at
-the Australian Industrial Transformation Institute. Data is updated at
-about 11:30am each day.
+`amwudata` is a collection of data sets commonly used by researchers in
+the NRC at the Australian Manufacturing Workers Union.
 
-The current version of `aitidata` is 0.1.1
+Data is updated at about 11:30am each day.
 
-Data was last updated 2025-03-17
+Data was last updated 2025-06-24
 
 ## Installation
 
@@ -25,32 +24,27 @@ with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("aiti-flinders/aitidata")
+devtools::install_github("amwu-nrc/amwudata")
 ```
 
 ## Included data
 
-    #> Warning in max.default(structure(numeric(0), class = "Date"), na.rm = FALSE):
-    #> no non-missing arguments to max; returning -Inf
-
-| Data Name | Description | Most Recent Data |
+| data_name | description | last_updated |
 |:---|:---|:---|
-| hours_worked | Hours worked | 2025-01-01 |
-| internet_vacancy_index | Internet Vacancies Index | 2025-01-01 |
-| internet_vacancy_regional | Internet Vacancies Regional | 2025-01-01 |
-| jobseeker_sa2 | JobSeeker data by SA2 | 2025-01-01 |
-| labour_force | ABS Labour Force Survey | 2025-01-01 |
-| retail_trade | Retail trade | 2025-01-01 |
-| labour_account | ABS Labour Account | 2024-12-01 |
-| national_accounts | ABS National Accounts | 2024-12-01 |
-| industry_employment | ABS Employment by Industry | 2024-11-01 |
-| industry_employment_detailed | ABS Detailed employment by industry | 2024-11-01 |
-| industry_underemployment | Underemployment by industry | 2024-11-01 |
-| occupation_underemployment | Underemployment by occupation | 2024-11-01 |
-| underutilisation | ABS Measures of Underutilisation | 2024-11-01 |
-| small_area_labour_market | DESE Small (SA2) Area Labour Market | 2024-09-01 |
-| cabee_sa2 | Counts of Australian Businesses, including Entries and Exists, June 2015 to June 2019 | 2024-06-01 |
-| household_spending | Experimental household spending | -Inf |
-| aus_manufacturing | Australian Manufacturing | NA |
-| payroll_index | ABS Weekly Payroll Index | NA |
-| south_australia_net_debt | South Australia Historic Net Debt | NA |
+| aus_manufacturing | Annual estimates of key economic and financial performance of the Manufacturing industry in Australia, including income, expenses, profit and capital expenditure | 2024-06-01 |
+| business_counts_sa2 | Counts of actively trading businesses, by industry, business size, and SA2 region. | 2024-06-01 |
+| hours_worked | Monthly hours worked in all jobs | 2025-05-01 |
+| household_spending | Experimental estimates of household spending | 2025-04-01 |
+| industry_employment | Employment by ANZSIC group (3-digit) | 2025-02-01 |
+| industry_underemployment | Underemployment data by ANZSIC industry (1-digit) | 2025-02-01 |
+| internet_vacancy_index | Number of online job advertisments by occupation | 2025-05-01 |
+| internet_vacancy_regional | Number of online job advertisments by occupation and internet vacancy region | 2025-05-01 |
+| jobseeker_sa2 | Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region | 2025-05-01 |
+| labour_account | Quarterly time series data across Jobs, Persons, Hours and Payments | 2025-03-01 |
+| labour_force | Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey | 2025-05-01 |
+| labour_force_briefing | A subset of the previous 12 months of the labour force survey | 2025-05-01 |
+| payroll_index | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
+| payroll_index_business | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
+| payroll_index_industry | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
+| small_area_labour_market | Labour market developments by SA2 region | 2024-12-01 |
+| underutilisation | Detailed underutilisation statistics from the labour force survey | 2024-11-01 |

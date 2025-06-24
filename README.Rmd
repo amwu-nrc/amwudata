@@ -4,48 +4,6 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
-library(dplyr)
-library(purrr)
-library(stringr)
-library(lazyeval)
-library(amwudata)
-
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-
-write_metadata <- function() {
- included_data <-  data.frame(ls("package:amwudata")) |> 
-   mutate(Item = paste0("amwudata::", Item))
- 
- safe_max <- safely(.f = ~lazy_eval(.x) |> pull(date) |> max(),
-                    otherwise = NA)
- 
- date_max <- map(.x = included_data$Item, .f = ~safe_max(.x)) |> 
-   transpose() |> 
-   pluck("result") |> 
-   simplify() |> 
-   list_c() |> 
-   as.Date()
- 
- date_max <- data.frame(date_max)
-
- bind_cols(included_data, date_max) |> 
-   mutate(Item = str_remove_all(Item, "amwudata::")) |> 
-   rename("Data Name" = Item,
-          "Description" = Title,
-          "Most Recent Data" = date_max) |>   
-   arrange(desc(`Most Recent Data`))
- 
-}
-
-
-```
-
 # AMWU Relevant Data
 
 <!-- badges: start -->
@@ -54,11 +12,11 @@ write_metadata <- function() {
 
 <!-- badges: end -->
 
-`aitidata` is a collection of data sets commonly used by researchers at the Australian Industrial Transformation Institute. Data is updated at about 11:30am each day. 
+`amwudata` is a collection of data sets commonly used by researchers in the NRC at the Australian Manufacturing Workers Union.
 
-The current version of `aitidata` is `r packageVersion("aitidata")`
+Data is updated at about 11:30am each day. 
 
-Data was last updated `r as.Date(Sys.time(), tz = "Australia/Adelaide")` 
+Data was last updated `r as.Date(Sys.time(), tz = "Australia/Melbourne")` 
 
 ## Installation
 
@@ -66,7 +24,7 @@ You can install the latest version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("aiti-flinders/aitidata")
+devtools::install_github("amwu-nrc/amwudata")
 ```
 
 
@@ -75,6 +33,7 @@ devtools::install_github("aiti-flinders/aitidata")
 
 ``` {r, echo = FALSE}
 
-knitr::kable(write_metadata())
+tab <- read.table("data-raw/included_data.txt")
+knitr::kable(tab)
 
 ```
