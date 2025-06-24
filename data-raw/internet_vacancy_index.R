@@ -20,6 +20,9 @@ path_to_file <- paste0("https://www.jobsandskills.gov.au", path_to_file)
 fname <- str_extract(path_to_file, "[^\\/]+$")
 
 if (!file.exists(paste0("data-raw/job_vacancies/", fname))) {
+  if (!dir.exists("data-raw/job_vacancies/")) {
+    dir.create("data-raw/job_vacancies")
+  }
   tryCatch(
     download.file(path_to_file, 
                   destfile = paste0("data-raw/job_vacancies/", fname),
@@ -73,13 +76,13 @@ path_to_file <- read_html(url) |>
   html_attr("href")
 
 path_to_file <- paste0("https://www.jobsandskills.gov.au", path_to_file)
-fname <- str_extract(path_to_file, "[^\\/]+$")
+fname_region <- str_extract(path_to_file, "[^\\/]+$")
 
 
-if (!file.exists(paste0("data-raw/job_vacancies/", fname))) {
+if (!file.exists(paste0("data-raw/job_vacancies/", fname_region))) {
   tryCatch(
     download.file(path_to_file, 
-                  destfile = paste0("data-raw/job_vacancies/", fname),
+                  destfile = paste0("data-raw/job_vacancies/", fname_region),
                   mode = "wb"),
     error = function(e) {
       message("Unable to download file.")
@@ -89,9 +92,9 @@ if (!file.exists(paste0("data-raw/job_vacancies/", fname))) {
 }
 
 
-internet_vacancy_regional <- function(fname) {
+internet_vacancy_regional <- function(fname_region) {
   
-  internet_vacancy_regional <- read_excel(paste0("data-raw/job_vacancies/", fname),
+  internet_vacancy_regional <- read_excel(paste0("data-raw/job_vacancies/", fname_region),
                                           sheet = 2) |> 
     pivot_longer(cols = -c("Level",
                            "State",
@@ -115,10 +118,16 @@ internet_vacancy_regional <- function(fname) {
   use_data(internet_vacancy_regional, overwrite = TRUE, compress = "xz")
 }
 
-tryCatch(internet_vacancy_regional(fname),
+tryCatch(internet_vacancy_regional(fname_region),
          error = function(e) {
            message("Unable to read file. It probably didn't download.")
            print(e)
          })
-  
+
+# Clean up files
+# The only files which should exist are data-raw/job_vacancies/{fname} and data-raw/job_vacancies/{fname_region}
+f <- list.files("data-raw/job_vacancies")
+tbd <- f[!f %in% c(fname, fname_region)]
+file.remove(paste0("data-raw/job_vacancies/", tbd))
+
   
