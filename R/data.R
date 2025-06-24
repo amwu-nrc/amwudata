@@ -57,19 +57,38 @@
 #' occupation since January 2006. Data is updated monthly, about one week
 #' after the Labour Force Survey is released.
 #'
-#' @format A dataframe with 7 variables
+#' @format A dataframe with 6 variables
 #' \describe{
+#' \item{date}{Date}
 #' \item{state}{State}
-#' \item{date}{year month date, since January 2006}
-#' \item{anzsco_2}{2 digit ANZSCO}
-#' \item{occupation}{Occupation name}
-#' \item{value}{Number of internet vacancies recorded}
-#' \item{anzsco_1}{1 digit ANZSCO}
-#' \item{occupation_group}{Occupation group name}
+#' \item{occupation_level}{ANZSCO Occupation Level}
+#' \item{anzsco_code}{ANZSCO Occupation Code}
+#' \item{anzsco_title}{ANZSCO Occupation Name}
+#' \item{value}{Number of vacancies}
 #' }
 #'
 #' @source \url{https://lmip.gov.au/default.aspx?LMIP/GainInsights/VacancyReport}
 "internet_vacancy_index"
+
+#' @title Internet Vacancies Index - Regional
+#'
+#' @description
+#' A dataset containing monthly nation and sub-national internet vacancies by
+#' occupation since January 2006. Data is updated monthly, about one week
+#' after the Labour Force Survey is released.
+#'
+#' @format A dataframe with 7 variables
+#' \describe{
+#' \item{date}{Date}
+#' \item{state}{State}
+#' \item{occupation_level}{ANZSCO Occupation Level}
+#' \item{anzsco_code}{ANZSCO Occupation Code}
+#' \item{vacancy_region}{Vacancy Region}
+#' \item{value}{Number of vacancies}
+#' }
+#'
+#' @source \url{https://lmip.gov.au/default.aspx?LMIP/GainInsights/VacancyReport}
+"internet_vacancy_regional"
 
 #' @title JobSeeker data by SA2
 #'
