@@ -27,13 +27,26 @@ read_jobseeker <- function(url, date) {
   fname <- paste0("data-raw/jobseeker/", date, "-jobseeker_sa2.xlsx")
   
   if (!file.exists(fname)) {
+    if (!dir.exists("data-raw/jobseeker")) {
+      dir.create("data-raw/jobseeker")
+    }
     download.file(url, destfile = fname, mode = "wb")
   }
   
   sa2_sheet <- which(grepl("By SA2", excel_sheets(fname)))
   
+  max_rows <- suppressWarnings(
+    expr = {
+      x <- read_excel(fname, sheet = sa2_sheet, skip = 10, col_names = c("sa2_code", "sa2_name", "jobseeker_payment", "youth_allowance_other"),
+                         col_types = c("numeric", "text", "numeric", "numeric")) |> 
+        pull(sa2_code) 
+      min(which(is.na(x))) - 1
+    }
+  )
+
   monthly <- read_excel(fname,
                         sheet = sa2_sheet,
+                        n_max = max_rows,
                         skip = 10,
                         na = "<5",
                         col_names = c("sa2_code", "sa2_name", "jobseeker_payment", "youth_allowance_other"),
