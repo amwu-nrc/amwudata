@@ -15,7 +15,7 @@
 #'
 #' @source \url{https://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/8165.0Main+Features2June%202015%20to%20June%202019?OpenDocument}
 #'
-"cabee_sa2"
+"business_counts_sa2"
 
 
 #' @title ABS Employment by Industry
@@ -48,9 +48,6 @@
 #'
 #' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/PrimaryMainFeatures/6291.0.55.001?OpenDocument}
 "industry_employment"
-
-#' ABS Detailed employment by industry
-"industry_employment_detailed"
 
 
 #' @title Internet Vacancies Index
@@ -233,17 +230,10 @@
 #' Australian Manufacturing
 "aus_manufacturing"
 
-#' Industry value add
-"national_accounts"
-
-#' Internet Vacancies Regional
-"internet_vacancy_regional"
 
 #' Hours worked
 "hours_worked"
 
-#' Retail trade
-"retail_trade"
 
 #' Underemployment by industry
 "industry_underemployment"
