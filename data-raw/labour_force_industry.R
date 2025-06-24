@@ -28,7 +28,7 @@ table_19 <- read_abs_local(filenames = "6291019.xlsx",
   filter(indicator != "Employed total")
 
 industry_underemployment <- table_19 |> 
-  filter(industry %in% c("Managers",
+  filter(!industry %in% c("Managers",
                          "Professionals",
                          "Technicians and Trades Workers",
                          "Community and Personal Service Workers",
@@ -74,29 +74,6 @@ use_data(industry_underemployment, overwrite = TRUE, compress = "xz")
 use_data(occupation_underemployment, overwrite = TRUE,compress = "xz")
 
 
-# Industry Employment -----------------------------------------------------
-
-download_abs_data_cube("labour-force-australia-detailed",
-                       cube = "6291005.xlsx",
-                       path = "data-raw")
-
-industry_employment <- read_abs_local(path = "data-raw",
-                                      filenames = "6291005.xlsx") |> 
-  separate(series, 
-           into = c("state", "industry", "indicator"), 
-           sep = ";", 
-           extra = "drop") |> 
-  mutate(across(c("state", "industry", "indicator"), ~ gsub(pattern = "> ", x = .x, replacement = "")),
-         across(where(is.character), ~trimws(.x)),
-         indicator = ifelse(indicator == "", industry, indicator),
-         industry = ifelse(grepl(x = industry, pattern = "Employed"), "Total (industry)", industry)) |> 
-  group_by(date, indicator, state) |> 
-  mutate(value_share = 200 * value / sum(value)) |> # Because the total is included, percentages are off by half. 
-  ungroup() 
-
-file.remove("data-raw/6291005.xlsx")
-use_data(industry_employment, overwrite = TRUE, compress = "xz")
-
 # Detailed Industry Employment --------------------------------------------
 download_abs_data_cube("labour-force-australia-detailed",
                        cube = "EQ06",
@@ -116,7 +93,7 @@ eq6 <- read_excel(path = "data-raw/EQ06.xlsx",
          anzsic_group = str_sub(anzsic_group, 5)) |>  
   replace_na(list(value = 0)) 
 
-industry_employment_detailed <- left_join(eq6, anzsic2006 |> distinct(anzsic_division, anzsic_subdivision, anzsic_group)) |> 
+industry_employment <- left_join(eq6, anzsic2006 |> distinct(anzsic_division, anzsic_subdivision, anzsic_group)) |> 
   distinct() |> 
   group_by(date, indicator, sex, state, anzsic_group, anzsic_subdivision, anzsic_division) |> 
   summarise(value = sum(value), 
@@ -124,5 +101,5 @@ industry_employment_detailed <- left_join(eq6, anzsic2006 |> distinct(anzsic_div
   mutate(value = value * 1000,
          indicator = str_replace_all(indicator, "\\('000.+", ""),
                                      indicator = trimws(indicator))
-use_data(industry_employment_detailed, compress = "xz", overwrite = TRUE) 
+use_data(industry_employment, compress = "xz", overwrite = TRUE) 
 
