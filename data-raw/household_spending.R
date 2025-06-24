@@ -4,7 +4,7 @@ library(dplyr)
 library(lubridate)
 library(usethis)
 
-raw <- read_abs(cat_no = "5682.0", tables = 1:9, retain_files = FALSE) 
+raw <- read_abs(cat_no = "5682.0", tables = 2:10, retain_files = FALSE) 
 
 household_spending <- raw |> 
   separate_series(column_names = c("indicator", "coicop_division", "state", "price"),
