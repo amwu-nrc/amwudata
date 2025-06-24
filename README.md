@@ -29,22 +29,22 @@ devtools::install_github("amwu-nrc/amwudata")
 
 ## Included data
 
-| data_name | description | last_updated |
-|:---|:---|:---|
-| aus_manufacturing | Annual estimates of key economic and financial performance of the Manufacturing industry in Australia, including income, expenses, profit and capital expenditure | 2024-06-01 |
-| business_counts_sa2 | Counts of actively trading businesses, by industry, business size, and SA2 region. | 2024-06-01 |
-| hours_worked | Monthly hours worked in all jobs | 2025-05-01 |
-| household_spending | Experimental estimates of household spending | 2025-04-01 |
-| industry_employment | Employment by ANZSIC group (3-digit) | 2025-02-01 |
-| industry_underemployment | Underemployment data by ANZSIC industry (1-digit) | 2025-02-01 |
-| internet_vacancy_index | Number of online job advertisments by occupation | 2025-05-01 |
-| internet_vacancy_regional | Number of online job advertisments by occupation and internet vacancy region | 2025-05-01 |
-| jobseeker_sa2 | Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region | 2025-05-01 |
-| labour_account | Quarterly time series data across Jobs, Persons, Hours and Payments | 2025-03-01 |
-| labour_force | Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey | 2025-05-01 |
-| labour_force_briefing | A subset of the previous 12 months of the labour force survey | 2025-05-01 |
-| payroll_index | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
-| payroll_index_business | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
-| payroll_index_industry | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2024-12-14 |
-| small_area_labour_market | Labour market developments by SA2 region | 2024-12-01 |
-| underutilisation | Detailed underutilisation statistics from the labour force survey | 2024-11-01 |
+| data_name                 | description                                                                                                                                                       | last_updated |
+|:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
+| aus_manufacturing         | Annual estimates of key economic and financial performance of the Manufacturing industry in Australia, including income, expenses, profit and capital expenditure | 2024-06-01   |
+| business_counts_sa2       | Counts of actively trading businesses, by industry, business size, and SA2 region.                                                                                | 2024-06-01   |
+| hours_worked              | Monthly hours worked in all jobs                                                                                                                                  | 2025-05-01   |
+| household_spending        | Experimental estimates of household spending                                                                                                                      | 2025-04-01   |
+| industry_employment       | Employment by ANZSIC group (3-digit)                                                                                                                              | 2025-02-01   |
+| industry_underemployment  | Underemployment data by ANZSIC industry (1-digit)                                                                                                                 | 2025-02-01   |
+| internet_vacancy_index    | Number of online job advertisments by occupation                                                                                                                  | 2025-05-01   |
+| internet_vacancy_regional | Number of online job advertisments by occupation and internet vacancy region                                                                                      | 2025-05-01   |
+| jobseeker_sa2             | Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region                                                                      | 2025-05-01   |
+| labour_account            | Quarterly time series data across Jobs, Persons, Hours and Payments                                                                                               | 2025-03-01   |
+| labour_force              | Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey                              | 2025-05-01   |
+| labour_force_briefing     | A subset of the previous 12 months of the labour force survey                                                                                                     | 2025-05-01   |
+| payroll_index             | Weekly payroll job indexes, sourced from Single Touch Payroll data                                                                                                | 2024-12-14   |
+| payroll_index_business    | Weekly payroll job indexes, sourced from Single Touch Payroll data                                                                                                | 2024-12-14   |
+| payroll_index_industry    | Weekly payroll job indexes, sourced from Single Touch Payroll data                                                                                                | 2024-12-14   |
+| small_area_labour_market  | Labour market developments by SA2 region                                                                                                                          | 2024-12-01   |
+| underutilisation          | Detailed underutilisation statistics from the labour force survey                                                                                                 | 2024-11-01   |
