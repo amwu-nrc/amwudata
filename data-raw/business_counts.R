@@ -67,7 +67,7 @@ cabee_sa2 <- map2(.x = cabee_sheets,
   list_rbind()
 
 
-cabee_sa2 <- cabee_sa2 |> 
+business_counts_sa2 <- cabee_sa2 |> 
   pivot_longer(cols = -c("industry_code", "industry_label", "sa2_main_2016", "sa2_name_2016", "date"),
                       names_to = "indicator",
                       values_to = "value") |> 
@@ -79,6 +79,6 @@ cabee_sa2 <- cabee_sa2 |>
                 "value")
 file.remove(abs_file)
 
-use_data(cabee_sa2, compress = "xz", overwrite = TRUE)
+use_data(business_counts_sa2, compress = "xz", overwrite = TRUE)
 
 
