@@ -101,5 +101,7 @@ industry_employment <- left_join(eq6, anzsic2006 |> distinct(anzsic_division, an
   mutate(value = value * 1000,
          indicator = str_replace_all(indicator, "\\('000.+", ""),
                                      indicator = trimws(indicator))
+file.remove("data-raw/EQ06.xlsx")
+
 use_data(industry_employment, compress = "xz", overwrite = TRUE) 
 
