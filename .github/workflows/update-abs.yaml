@@ -1,5 +1,6 @@
 name: update-data
-on:
+on: 
+  workflow_dispatch:
   push:
     branches: [main, master]
     paths:
@@ -27,7 +28,6 @@ jobs:
         run: |
           Rscript -e "install.packages('rmarkdown')"
           Rscript -e "rmarkdown::render('README.Rmd')"
-        
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
