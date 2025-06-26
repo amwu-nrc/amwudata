@@ -7,6 +7,7 @@
 \format{
 A data frame with 10 variables:
 \describe{
+\item{data}{Data name}
 \item{date}{date of survey}
 \item{sex}{sex of individual surveyed: persons, male, or female}
 \item{age}{age of individual surveyed}
@@ -18,13 +19,13 @@ A data frame with 10 variables:
 }
 }
 \source{
-\url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
+Tables 12, 12a, 22, 23, 23a \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
 }
 \usage{
 labour_force
 }
 \description{
-A dataset containing monthly national and sub-national labour force
-indicators since February 1978.
+Detailed monthly and quarterly Labour Force Survey data, including hours, regions, families, job search,
+job duration, casual, industry and occupation.
 }
 \keyword{datasets}

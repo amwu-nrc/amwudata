@@ -131,11 +131,12 @@
 
 #' ABS Labour Force Survey
 #'
-#' A dataset containing monthly national and sub-national labour force
-#' indicators since February 1978.
-#'
+#' Detailed monthly and quarterly Labour Force Survey data, including hours, regions, families, job search, 
+#' job duration, casual, industry and occupation. 
+#' 
 #' @format A data frame with 10 variables:
 #' \describe{
+#' \item{data}{Data name}
 #' \item{date}{date of survey}
 #' \item{sex}{sex of individual surveyed: persons, male, or female}
 #' \item{age}{age of individual surveyed}
@@ -146,7 +147,7 @@
 #' \item{value}{value of labour force indicator}
 #' }
 #'
-#' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
+#' @source Tables 12, 12a, 22, 23, 23a \url{https://www.abs.gov.au/ausstats/abs@.nsf/mf/6202.0}
 "labour_force"
 
 #' ABS Labour Force Survey - 12 month series
@@ -237,8 +238,6 @@
 #' @source \url{https://www.employment.gov.au/small-area-labour-markets-publication-0}
 "small_area_labour_market"
 
-#' ABS Measures of Underutilisation
-"underutilisation"
 
 #' South Australia Historic Net Debt
 "south_australia_net_debt"
@@ -247,6 +246,24 @@
 "national_accounts"
 
 #' Australian Manufacturing
+#' 
+#' Annual estimates of key economic and financial performance
+#' of industries in Australia, including income, expenses,
+#' profit and capital expenditure. Manufacturing industry only, 
+#' previous three financial years. 
+#' 
+#' @format A dataframe with 6 variables:
+#' \describe{
+#' \item{date}{date}
+#' \item{data}{data name}
+#' \item{indicator}{Indicator}
+#' \item{state}{State}
+#' \item{anzsic_subdivision}{anzsic_subdivision}
+#' \item{anzsic_subdivision_code}{anzsic_subdivision_code}
+#' \item{series_type}
+#' \item{value}
+#' \item{unit}
+#' }
 "aus_manufacturing"
 
 

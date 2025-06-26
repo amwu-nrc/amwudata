@@ -4,18 +4,6 @@ library(dplyr)
 library(tidyr)
 library(usethis)
 
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
-
-
 raw <- read_abs(cat_no = "6202.0", tables = c("12", "12a", "22", "23", "23a"), retain_files = FALSE)
 
 labour_force_status <- raw |> 
@@ -45,7 +33,8 @@ labour_force <- bind_rows(list(labour_force_status, underutilisation_aus, underu
   filter(!is.na(value))  |>  
   mutate(age = ifelse(is.na(age), "Total (age)", age),
                 state = ifelse(is.na(state), "Australia", state),
-                value = ifelse(value == "000", value*1000, value)) |> 
-  distinct(date, indicator, sex, state, series_type, unit, age, value) 
+                value = ifelse(value == "000", value*1000, value),
+         data = "labour_force") |> 
+  distinct(data, date, indicator, sex, state, series_type, unit, age, value) 
 
 use_data(labour_force, overwrite = TRUE, compress = "xz")
