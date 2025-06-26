@@ -6,6 +6,7 @@ included_data <- tribble(
   ~data_name, ~description, ~last_updated,
   'aus_manufacturing', 'Annual estimates of key economic and financial performance of the Manufacturing industry in Australia, including income, expenses, profit and capital expenditure', NA_character_,
   'business_counts_sa2', "Counts of actively trading businesses, by industry, business size, and SA2 region.", NA_character_,
+  "cpi_monthly", "The monthly CPI indicator is a measure of inflation and includes statistics about prices for categories of households expenditures", NA_character_,
   'hours_worked', "Monthly hours worked in all jobs", NA_character_,
   "household_spending", "Experimental estimates of household spending", NA_character_,
   "industry_employment", "Employment by ANZSIC group (3-digit)", NA_character_,

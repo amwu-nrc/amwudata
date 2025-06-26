@@ -263,6 +263,22 @@
 #' Experimental household spending
 "household_spending"
 
+#' Monthly Consumer Price Index Indicator
+#' The monthly CPI indicator is a measure of inflation and includes statistics about prices for 
+#' categories of households expenditures. This dataset includes index numbers and percentage changes
+#' for Australia for all CPI groups since September 2017.
+#' 
+#' @format A dataframe with 6 variables:
+#' \describe{
+#' \item{date}{Date}
+#' \item{indicator}{Indicator}
+#' \item{cpi_group}{CPI Group}
+#' \item{state}{State. Australia is a weighted average of 8 capital cities.}
+#' \item{unit}{Data unit}
+#' \item{value}{Value}
+#' }
+#' @source Table 1 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/monthly-consumer-price-index-indicator/latest-release}
+"cpi_monthly"
 
 
 
