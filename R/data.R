@@ -280,5 +280,26 @@
 #' @source Table 1 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/monthly-consumer-price-index-indicator/latest-release}
 "cpi_monthly"
 
+#' Quarterly Wage Price Index 
+#' The WPI measures changes in the price of labour, unaffected by compositional shifts in the labour force, hours worked or
+#' employee characteristics. This dataset includes quarterly index numbers and percentage changes
+#' for all states including Australia, private and public sector, and industry of employment. 
+#' 
+#' @format A dataframe with 8 variables:
+#' \describe{
+#' \item{date}{Date}
+#' \item{data_type}{The type of data. One of Quarterly Index, Percentage Change from Previous Quarter, Percentage Change from Corresponding Quarter of Previous Year}
+#' \item{indicator}{Indicator}
+#' \item{state}{State}
+#' \item{sector}{Private and Public, Private, Public}
+#' \item{industry}{Industry}
+#' \item{unit}{Data unit}
+#' \item{value}{Value}
+#' }
+#' @source Tables 2bto9b \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/wage-price-index-australia/latest-release}
+"wpi_quarterly"
+
+
+
 
 
