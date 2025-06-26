@@ -21,8 +21,7 @@ included_data <- tribble(
   "payroll_index_business", "Weekly payroll job indexes, sourced from Single Touch Payroll data", NA_character_,
   "payroll_index_industry", "Weekly payroll job indexes, sourced from Single Touch Payroll data", NA_character_,
   "small_area_labour_market", "Labour market developments by SA2 region", NA_character_,
-  "underutilisation", "Detailed underutilisation statistics from the labour force survey", NA_character_
-  
+
 )
 
 get_max_date <- function(data_name) {

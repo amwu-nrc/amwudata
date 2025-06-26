@@ -5,12 +5,26 @@
 \alias{aus_manufacturing}
 \title{Australian Manufacturing}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 2490 rows and 5 columns.
+A dataframe with 6 variables:
+\describe{
+\item{date}{date}
+\item{data}{data name}
+\item{indicator}{Indicator}
+\item{state}{State}
+\item{anzsic_subdivision}{anzsic_subdivision}
+\item{anzsic_subdivision_code}{anzsic_subdivision_code}
+\item{series_type}
+\item{value}
+\item{unit}
+}
 }
 \usage{
 aus_manufacturing
 }
 \description{
-Australian Manufacturing
+Annual estimates of key economic and financial performance
+of industries in Australia, including income, expenses,
+profit and capital expenditure. Manufacturing industry only,
+previous three financial years.
 }
 \keyword{datasets}

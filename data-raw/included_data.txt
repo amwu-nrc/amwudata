@@ -16,4 +16,3 @@
 "15" "payroll_index_business" "Weekly payroll job indexes, sourced from Single Touch Payroll data" 2024-12-14
 "16" "payroll_index_industry" "Weekly payroll job indexes, sourced from Single Touch Payroll data" 2024-12-14
 "17" "small_area_labour_market" "Labour market developments by SA2 region" 2024-12-01
-"18" "underutilisation" "Detailed underutilisation statistics from the labour force survey" 2024-11-01
