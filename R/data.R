@@ -260,9 +260,9 @@
 #' \item{state}{State}
 #' \item{anzsic_subdivision}{anzsic_subdivision}
 #' \item{anzsic_subdivision_code}{anzsic_subdivision_code}
-#' \item{series_type}
-#' \item{value}
-#' \item{unit}
+#' \item{series_type}{series type}
+#' \item{value}{value}
+#' \item{unit}{unit}
 #' }
 "aus_manufacturing"
 
