@@ -15,7 +15,7 @@ the NRC at the Australian Manufacturing Workers Union.
 
 Data is updated at about 11:30am each day.
 
-Data was last updated 2025-06-26
+Data was last updated 2025-07-01
 
 ## Installation
 
@@ -48,4 +48,3 @@ devtools::install_github("amwu-nrc/amwudata")
 | payroll_index_business    | Weekly payroll job indexes, sourced from Single Touch Payroll data                                                                                                | 2024-12-14   |
 | payroll_index_industry    | Weekly payroll job indexes, sourced from Single Touch Payroll data                                                                                                | 2024-12-14   |
 | small_area_labour_market  | Labour market developments by SA2 region                                                                                                                          | 2024-12-01   |
-| underutilisation          | Detailed underutilisation statistics from the labour force survey                                                                                                 | 2024-11-01   |
