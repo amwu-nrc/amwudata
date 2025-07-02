@@ -260,9 +260,9 @@
 #' \item{state}{State}
 #' \item{anzsic_subdivision}{anzsic_subdivision}
 #' \item{anzsic_subdivision_code}{anzsic_subdivision_code}
-#' \item{series_type}
-#' \item{value}
-#' \item{unit}
+#' \item{series_type}{series type}
+#' \item{value}{value}
+#' \item{unit}{unit}
 #' }
 "aus_manufacturing"
 
@@ -296,6 +296,25 @@
 #' }
 #' @source Table 1 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/monthly-consumer-price-index-indicator/latest-release}
 "cpi_monthly"
+
+#' Quarterly Consumper Price Index Indicator
+#' The quarterly CPI measures household inflation and includes statistics about
+#' price changes for categories of household expenditure. This dataset includes index numbers
+#' for capital cities and Australia, for CPI expenditure classes.
+#' 
+#' @format A dataframe with 9 variables:
+#' \describe{
+#' \item{date}{Date}
+#' \item{indicator}{Index Numbers}
+#' \item{cpi_expenditure_class}{CPI Expenditure Class}
+#' \item{state}{Capital City}
+#' \item{value}{Indexed CPI}
+#' \item{unit}{Unit}
+#' \item{group}{CPI Group}
+#' \item{sub_group}{CPI Subgroup}
+#' \item{reindex}{Value reindexed}
+#' }
+"cpi_quarterly"
 
 #' Quarterly Wage Price Index 
 #' The WPI measures changes in the price of labour, unaffected by compositional shifts in the labour force, hours worked or
