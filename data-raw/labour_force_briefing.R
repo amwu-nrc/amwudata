@@ -60,8 +60,7 @@ labour_force <- bind_rows(list(labour_force_status, underutilisation_aus, underu
   pivot_longer(cols = "Employed total":"Underutilised total",
                names_to = "indicator",
                values_to = "value",
-               values_drop_na = TRUE) |>
-  mutate(value = ifelse(unit == "000", value * 1000, value))
+               values_drop_na = TRUE) 
 
 hours_worked <- hours_worked |>
   filter(date >= max(date) - years(5),

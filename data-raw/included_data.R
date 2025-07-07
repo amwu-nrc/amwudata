@@ -18,7 +18,7 @@ included_data <- tribble(
   "jobseeker_sa2", "Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region", NA_character_,
   "labour_account", "Quarterly time series data across Jobs, Persons, Hours and Payments", NA_character_,
   "labour_force", "Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey", NA_character_,
-  "labour_force_briefing", "A subset of the previous 12 months of the labour force survey", NA_character_,
+  "labour_force_briefing", "A subset of the previous 5 years of the labour force survey", NA_character_,
   "payroll_index", "Weekly payroll job indexes, sourced from Single Touch Payroll data", NA_character_,
   "payroll_index_business", "Weekly payroll job indexes, sourced from Single Touch Payroll data", NA_character_,
   "payroll_index_industry", "Weekly payroll job indexes, sourced from Single Touch Payroll data", NA_character_,
