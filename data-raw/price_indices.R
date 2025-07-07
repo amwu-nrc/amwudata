@@ -1,6 +1,7 @@
 ## code to prepare `price_indices` datasets goes here
 library(readabs)
 library(dplyr)
+library(tidyr)
 library(tibble)
 
 cpi_groups <- tibble::tribble(
@@ -102,20 +103,22 @@ cpi_monthly <- read_abs("6484.0", tables = "1", retain_files = F) |>
   separate_series(column_names = c("indicator", "cpi_group", "state")) |> 
   select(date, indicator, cpi_group, state, unit, value)
 
-cpi_quarterly <- read_abs("6401.0", tables = "9", retain_files = F) |> 
+cpi_quarterly_raw <- read_abs("6401.0", tables = "9", retain_files = F) |> 
   separate_series(column_names = c("indicator", "expenditure_class", "state"), remove_nas = TRUE) 
 
-# cpi_quarterly_group <- cpi_quarterly |> 
-#   filter(expenditure_class %in% c(cpi_groups$group, "All groups CPI")) |> 
-#   select(date, indicator, cpi_group = expenditure_class, state, value, unit) |> 
-#   distinct() 
+cpi_quarterly_group <- cpi_quarterly_raw |>
+  filter(expenditure_class %in% c(cpi_groups$group, "All groups CPI")) |>
+  select(date, indicator, group = expenditure_class, state, value, unit) |>
+  distinct() |> 
+  mutate(cpi_expenditure_class = paste0(group, " (Total)"),
+         sub_group = paste0(group, " (Total)"))
 # 
 # cpi_quarterly_sub_group <- cpi_quarterly |> 
 #   filter(expenditure_class %in% c(cpi_groups$sub_group, "All groups CPI")) |> 
 #   select(date, indicator, cpi_sub_group = expenditure_class, state, value, unit) |> 
 #   distinct() 
 
-cpi_quarterly_expenditure_class <- cpi_quarterly |> 
+cpi_quarterly_expenditure_class <- cpi_quarterly_raw |> 
   filter(expenditure_class %in% c(cpi_groups$expenditure_class, "All groups CPI")) |> 
   select(date, indicator, cpi_expenditure_class = expenditure_class, state, value, unit) |> 
   distinct()
@@ -123,6 +126,8 @@ cpi_quarterly_expenditure_class <- cpi_quarterly |>
 cpi_quarterly <- cpi_quarterly_expenditure_class |> 
   left_join(cpi_groups, by = c("cpi_expenditure_class" = "expenditure_class")) |> 
   replace_na(list(group = "All groups CPI", sub_group = "All groups CPI")) |> 
+  bind_rows(cpi_quarterly_group) |> 
+  distinct() |> 
   group_by(cpi_expenditure_class, state) |> 
   mutate(reindex = 100*value/value[date == "2020-03-01"]) |> 
   ungroup() 
