@@ -3,7 +3,6 @@ library(readabs)
 library(zoo)
 library(dplyr)
 library(lubridate)
-library(ggplot2)
 library(tidyr)
 
 raw <- read_abs("5206.0", tables = c(1, 5, 7), retain_files = FALSE)
