@@ -98,6 +98,11 @@ cpi_groups <- tibble::tribble(
 
 
 
+cpi_expenditure_class <- cpi_groups |> 
+  distinct(expenditure_class, group)
+
+cpi_sub_group <- cpi_groups |> 
+  distinct(expenditure_class, sub_group)
 
 cpi_monthly <- read_abs("6484.0", tables = "1", retain_files = F) |> 
   separate_series(column_names = c("indicator", "cpi_group", "state")) |> 
@@ -112,11 +117,13 @@ cpi_quarterly_group <- cpi_quarterly_raw |>
   distinct() |> 
   mutate(cpi_expenditure_class = paste0(group, " (Total)"),
          sub_group = paste0(group, " (Total)"))
-# 
-# cpi_quarterly_sub_group <- cpi_quarterly |> 
-#   filter(expenditure_class %in% c(cpi_groups$sub_group, "All groups CPI")) |> 
-#   select(date, indicator, cpi_sub_group = expenditure_class, state, value, unit) |> 
-#   distinct() 
+
+cpi_quarterly_sub_group <- cpi_quarterly_raw |>
+  filter(expenditure_class %in% c(cpi_groups$sub_group, "All groups CPI")) |>
+  select(date, indicator, sub_group = expenditure_class, state, value, unit) |>
+  distinct() |> 
+  mutate(cpi_expenditure_class = paste0(sub_group, " (Total)")) |> 
+  left_join(cpi_groups, by = c("sub_group"))
 
 cpi_quarterly_expenditure_class <- cpi_quarterly_raw |> 
   filter(expenditure_class %in% c(cpi_groups$expenditure_class, "All groups CPI")) |> 
@@ -126,7 +133,8 @@ cpi_quarterly_expenditure_class <- cpi_quarterly_raw |>
 cpi_quarterly <- cpi_quarterly_expenditure_class |> 
   left_join(cpi_groups, by = c("cpi_expenditure_class" = "expenditure_class")) |> 
   replace_na(list(group = "All groups CPI", sub_group = "All groups CPI")) |> 
-  bind_rows(cpi_quarterly_group) |> 
+  bind_rows(cpi_quarterly_group,
+            cpi_quarterly_sub_group) |> 
   distinct() |> 
   group_by(cpi_expenditure_class, state) |> 
   mutate(reindex = 100*value/value[date == "2020-03-01"]) |> 
