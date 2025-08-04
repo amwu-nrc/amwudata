@@ -353,7 +353,7 @@
 #' \item{gdp_per_hour_index}{GDP per hour indexed to December 1991}
 #' }
 #' @source Table 1,5,7 \url{https://www.abs.gov.au/statistics/economy/national-accounts/australian-national-accounts-national-income-expenditure-and-product/mar-2025}
-
+"productivity"
 
 
 
