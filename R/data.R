@@ -33,7 +33,7 @@
 #' \item{anzsic_group}{ANZSIC 2006 Group}
 #' \item{anzsic_subdivision}{ANZSIC 2006 Subdivision}
 #' \item{anzsic_division}{ANZSIC 2006 Division}
-#' \item{value}
+#' \item{value}{Value}
 #' }
 #'
 #' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/PrimaryMainFeatures/6291.0.55.001?OpenDocument}

@@ -14,7 +14,7 @@ A dataframe with 8 variables:
 \item{anzsic_group}{ANZSIC 2006 Group}
 \item{anzsic_subdivision}{ANZSIC 2006 Subdivision}
 \item{anzsic_division}{ANZSIC 2006 Division}
-\item{value}
+\item{value}{Value}
 }
 }
 \source{
