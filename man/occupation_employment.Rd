@@ -17,6 +17,7 @@ A dataframe with 9 variables:
 \item{anzsco_unit}{ANZSCO 2013 Unit Occupation}
 \item{value}{Value}
 }
+}
 \source{
 \url{https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia-detailed/latest-release}
 }

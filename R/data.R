@@ -34,6 +34,7 @@
 #' \item{anzsic_subdivision}{ANZSIC 2006 Subdivision}
 #' \item{anzsic_division}{ANZSIC 2006 Division}
 #' \item{value}
+#' }
 #'
 #' @source \url{https://www.abs.gov.au/ausstats/abs@.nsf/PrimaryMainFeatures/6291.0.55.001?OpenDocument}
 "industry_employment"
@@ -55,6 +56,7 @@
 #' \item{anzsco_minor}{ANZSCO 2013 Minor Occupation}
 #' \item{anzsco_unit}{ANZSCO 2013 Unit Occupation}
 #' \item{value}{Value}
+#' }
 #'
 #' @source \url{https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia-detailed/latest-release}
 "occupation_employment"

@@ -16,6 +16,7 @@ A dataframe with 8 variables:
 \item{anzsic_division}{ANZSIC 2006 Division}
 \item{value}
 }
+}
 \source{
 \url{https://www.abs.gov.au/ausstats/abs@.nsf/PrimaryMainFeatures/6291.0.55.001?OpenDocument}
 }
