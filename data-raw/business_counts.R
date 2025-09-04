@@ -9,11 +9,24 @@ library(tidyr)
 library(tibble)
 library(usethis)
 
-abs_file <- download_abs_data_cube("counts-australian-businesses-including-entries-and-exits",
+safe_data_cube <- safely(download_abs_data_cube)
+
+abs_file <- safe_data_cube("counts-australian-businesses-including-entries-and-exits",
                                    cube = "8165DC08",
                                    path = "data-raw")
+
+if (is.null(abs_file$result)) { # This means the data cube didn't download it. Because the ABS releases half in August and half in December
+  url <- get_available_files("counts-australian-businesses-including-entries-and-exits") |> 
+    pull(url)
+  new_url <- str_replace_all(url, "2[0-9]{3}", \(x) as.numeric(x) - 1)
+  new_url <- str_replace(new_url, "8165DC01", "8165DC08")
+  
+  download.file(url = new_url, destfile = "data-raw/8165DC08.xlsx", mode = "wb")
+  abs_file <- "data-raw/8165DC08.xlsx"
+  
+}
 cabee_sheets <- excel_sheets(abs_file)
-cabee_sheets <- str_extract(cabee_sheets, "\\d")
+cabee_sheets <- str_extract(cabee_sheets, "\\d+")
 cabee_sheets <- cabee_sheets[!is.na(cabee_sheets)]
 cabee_sheets <- cabee_sheets[str_detect(cabee_sheets, "b", negate = TRUE)]
 cabee_sheets <- paste("Table", cabee_sheets)
