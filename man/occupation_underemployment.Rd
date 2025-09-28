@@ -5,7 +5,7 @@
 \alias{occupation_underemployment}
 \title{Underemployment by occupation}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6624 rows and 11 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 6672 rows and 11 columns.
 }
 \usage{
 occupation_underemployment
