@@ -5,7 +5,7 @@
 \alias{hours_worked}
 \title{Hours worked}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19244 rows and 14 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 19278 rows and 14 columns.
 }
 \usage{
 hours_worked
