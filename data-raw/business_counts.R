@@ -24,6 +24,8 @@ if (is.null(abs_file$result)) { # This means the data cube didn't download it. B
   download.file(url = new_url, destfile = "data-raw/8165DC08.xlsx", mode = "wb")
   abs_file <- "data-raw/8165DC08.xlsx"
   
+} else {
+  abs_file <- abs_file$result
 }
 cabee_sheets <- excel_sheets(abs_file)
 cabee_sheets <- str_extract(cabee_sheets, "\\d+")
