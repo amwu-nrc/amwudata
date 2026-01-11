@@ -9,6 +9,8 @@ urls <- get_available_files("labour-account-australia") |>
   filter(label != "Industry summary table") |> 
   pull(file)
 
+urls <- urls[!grepl("\\%", urls)]
+
 walk(.x = urls,
      .f = function(x) download_abs_data_cube("labour-account-australia",
                                              cube = x,
