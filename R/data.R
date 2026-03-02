@@ -292,41 +292,37 @@
 #' Experimental household spending
 "household_spending"
 
-#' Monthly Consumer Price Index Indicator
-#' The monthly CPI indicator is a measure of inflation and includes statistics about prices for 
+#' Quarterly Consumer Price Index Indicator
+#' The quarterly CPI indicator is a measure of inflation and includes statistics about prices for 
 #' categories of households expenditures. This dataset includes index numbers and percentage changes
-#' for Australia for all CPI groups since September 2017.
+#' for Australia for all CPI groups since September 1948.
 #' 
-#' @format A dataframe with 6 variables:
+#' @format A dataframe with 5 variables:
 #' \describe{
 #' \item{date}{Date}
-#' \item{indicator}{Indicator}
-#' \item{cpi_group}{CPI Group}
-#' \item{state}{State. Australia is a weighted average of 8 capital cities.}
+#' \item{data_type}{Data type. Either Index Numbers or Percentage Change from Previous Period}
+#' \item{region}{Capital city region. Australia is a weighted average of 8 capital cities.}
+#' \item{value}{Value. All groups CPI}
 #' \item{unit}{Data unit}
-#' \item{value}{Value}
 #' }
-#' @source Table 1 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/monthly-consumer-price-index-indicator/latest-release}
-"cpi_monthly"
+#' @source Table 17 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release}
+"cpi_quarterly"
 
 #' Quarterly Consumper Price Index Indicator
 #' The quarterly CPI measures household inflation and includes statistics about
 #' price changes for categories of household expenditure. This dataset includes index numbers
 #' for capital cities and Australia, for CPI expenditure classes.
 #' 
-#' @format A dataframe with 9 variables:
+#' @format A dataframe with 6 variables:
 #' \describe{
 #' \item{date}{Date}
-#' \item{indicator}{Index Numbers}
-#' \item{cpi_expenditure_class}{CPI Expenditure Class}
-#' \item{state}{Capital City}
+#' \item{data_type}{Data Type. Either Index Numbers of Percentage Change from Previous Period}
+#' \item{cpi_category}{CPI Expenditure Class}
+#' \item{region}{Capital City. Australia is a weighted average of the capital cities}
 #' \item{value}{Indexed CPI}
 #' \item{unit}{Unit}
-#' \item{group}{CPI Group}
-#' \item{sub_group}{CPI Subgroup}
-#' \item{reindex}{Value reindexed}
 #' }
-"cpi_quarterly"
+"cpi_quarterly_group"
 
 #' Quarterly Wage Price Index 
 #' The WPI measures changes in the price of labour, unaffected by compositional shifts in the labour force, hours worked or
