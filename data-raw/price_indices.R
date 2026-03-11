@@ -21,8 +21,12 @@ wpi_quarterly <- read_abs("6345.0", tables = paste0(c(2:5, 7:9), "b"), retain_fi
   mutate(reindex = 100*value/value[date == "2020-03-01"]) |> 
   ungroup() |> 
   distinct()
-
+cli <- read_abs("6467.0", tables =  2, retain_files = F) |>
+  separate_series(column_names = c("data_type", "household_type", "cpi_category"), 
+                  remove_nas = TRUE) |> 
+  select(date, data_type, household_type, cpi_category, value)
 
 usethis::use_data(wpi_quarterly, compress = 'xz', overwrite = TRUE)
 usethis::use_data(cpi_quarterly, compress = "xz", overwrite = TRUE)
 usethis::use_data(cpi_quarterly_group, compress = "xz", overwrite = TRUE)
+usethis::use_data(cli, compress = "xz", overwrite = TRUE)
