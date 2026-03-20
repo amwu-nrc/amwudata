@@ -292,6 +292,9 @@
 #' Experimental household spending
 "household_spending"
 
+#' Quarterly Living Cost Index
+"cli"
+
 #' Quarterly Consumer Price Index Indicator
 #' The quarterly CPI indicator is a measure of inflation and includes statistics about prices for 
 #' categories of households expenditures. This dataset includes index numbers and percentage changes
