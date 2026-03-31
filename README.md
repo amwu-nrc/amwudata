@@ -15,7 +15,7 @@ the NRC at the Australian Manufacturing Workers Union.
 
 Data is updated at about 11:30am each day.
 
-Data was last updated 2026-03-20
+Data was last updated 2026-03-31
 
 ## Installation
 
@@ -37,8 +37,8 @@ devtools::install_github("amwu-nrc/amwudata")
 | wpi_quarterly             | The WPI measures changes in the price of labour, unaffected by compositional shifts in the labour force, hours worked or employee characteristics                 | 2025-12-01   |
 | hours_worked              | Monthly hours worked in all jobs                                                                                                                                  | 2026-02-01   |
 | household_spending        | Experimental estimates of household spending                                                                                                                      | 2026-01-01   |
-| industry_employment       | Employment by ANZSIC group (3-digit)                                                                                                                              | 2025-11-01   |
-| industry_underemployment  | Underemployment data by ANZSIC industry (1-digit)                                                                                                                 | 2025-11-01   |
+| industry_employment       | Employment by ANZSIC group (3-digit)                                                                                                                              | 2026-02-01   |
+| industry_underemployment  | Underemployment data by ANZSIC industry (1-digit)                                                                                                                 | 2026-02-01   |
 | internet_vacancy_index    | Number of online job advertisments by occupation                                                                                                                  | 2025-05-01   |
 | internet_vacancy_regional | Number of online job advertisments by occupation and internet vacancy region                                                                                      | 2025-05-01   |
 | jobseeker_sa2             | Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region                                                                      | 2026-02-01   |
