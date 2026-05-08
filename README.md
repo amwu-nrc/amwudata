@@ -15,7 +15,7 @@ the NRC at the Australian Manufacturing Workers Union.
 
 Data is updated at about 11:30am each day.
 
-Data was last updated 2026-05-01
+Data was last updated 2026-05-07
 
 ## Installation
 
@@ -36,7 +36,7 @@ devtools::install_github("amwu-nrc/amwudata")
 | cpi_quarterly | The quarterly CPI measures household inflation and includes statistics about price changes for categories of household expenditure | 2026-03-01 |
 | wpi_quarterly | The WPI measures changes in the price of labour, unaffected by compositional shifts in the labour force, hours worked or employee characteristics | 2025-12-01 |
 | hours_worked | Monthly hours worked in all jobs | 2026-03-01 |
-| household_spending | Experimental estimates of household spending | 2026-02-01 |
+| household_spending | Experimental estimates of household spending | 2026-03-01 |
 | industry_employment | Employment by ANZSIC group (3-digit) | 2026-02-01 |
 | industry_underemployment | Underemployment data by ANZSIC industry (1-digit) | 2026-02-01 |
 | internet_vacancy_index | Number of online job advertisments by occupation | 2025-05-01 |
