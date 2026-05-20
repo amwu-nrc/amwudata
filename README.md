@@ -15,7 +15,7 @@ the NRC at the Australian Manufacturing Workers Union.
 
 Data is updated at about 11:30am each day.
 
-Data was last updated 2026-05-14
+Data was last updated 2026-05-20
 
 ## Installation
 
