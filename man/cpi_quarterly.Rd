@@ -3,31 +3,30 @@
 \docType{data}
 \name{cpi_quarterly}
 \alias{cpi_quarterly}
-\title{Quarterly Consumper Price Index Indicator
-The quarterly CPI measures household inflation and includes statistics about
-price changes for categories of household expenditure. This dataset includes index numbers
-for capital cities and Australia, for CPI expenditure classes.}
+\title{Quarterly Consumer Price Index Indicator
+The quarterly CPI indicator is a measure of inflation and includes statistics about prices for
+categories of households expenditures. This dataset includes index numbers and percentage changes
+for Australia for all CPI groups since September 1948.}
 \format{
-A dataframe with 9 variables:
+A dataframe with 5 variables:
 \describe{
 \item{date}{Date}
-\item{indicator}{Index Numbers}
-\item{cpi_expenditure_class}{CPI Expenditure Class}
-\item{state}{Capital City}
-\item{value}{Indexed CPI}
-\item{unit}{Unit}
-\item{group}{CPI Group}
-\item{sub_group}{CPI Subgroup}
-\item{reindex}{Value reindexed}
+\item{data_type}{Data type. Either Index Numbers or Percentage Change from Previous Period}
+\item{region}{Capital city region. Australia is a weighted average of 8 capital cities.}
+\item{value}{Value. All groups CPI}
+\item{unit}{Data unit}
 }
+}
+\source{
+Table 17 \url{https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/consumer-price-index-australia/latest-release}
 }
 \usage{
 cpi_quarterly
 }
 \description{
-Quarterly Consumper Price Index Indicator
-The quarterly CPI measures household inflation and includes statistics about
-price changes for categories of household expenditure. This dataset includes index numbers
-for capital cities and Australia, for CPI expenditure classes.
+Quarterly Consumer Price Index Indicator
+The quarterly CPI indicator is a measure of inflation and includes statistics about prices for
+categories of households expenditures. This dataset includes index numbers and percentage changes
+for Australia for all CPI groups since September 1948.
 }
 \keyword{datasets}
