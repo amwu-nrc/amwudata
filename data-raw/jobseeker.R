@@ -1,13 +1,13 @@
-## code to prepare `jobseeker` dataset goes here
-library(tibble)
-library(rvest)
-library(dplyr)
-library(stringr)
-library(purrr)
-library(usethis)
+# ## code to prepare `jobseeker` dataset goes here
+# library(tibble)
+# library(rvest)
+# library(dplyr)
+# library(stringr)
+# library(purrr)
+# library(usethis)
 
 
-# 
+# Don't want to keep this updated anymore. 
 # get_file_urls <- function(url) {
 #   tibble(
 #     url = read_html(url) |> 

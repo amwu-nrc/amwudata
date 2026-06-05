@@ -6,7 +6,7 @@ library(lubridate)
 library(tidyr)
 
 urls <- get_available_files("labour-account-australia") |> 
-  filter(label != "Industry summary table") |> 
+  filter(label != "Industry summary table" | file != "Industry%20summary%20table.xlsx") |> 
   pull(file)
 
 urls <- urls[!grepl("\\%", urls)]
