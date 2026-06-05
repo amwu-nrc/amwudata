@@ -14,7 +14,7 @@ states <- c(
   "Northern Territory",
   "Australian Capital Territory"
 )
-raw <- read_abs(cat_no = "6202.0", tables = c("19", "19a"), retain_files = FALSE)
+raw <- read_abs(cat_no = "6202.0", tables = c("17", "18"), retain_files = FALSE)
 
 hours_worked <- raw  |> 
   filter(table_no == "6202019" | table_no == "6202019a") |> 
