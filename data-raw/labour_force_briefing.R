@@ -5,7 +5,7 @@ library(lubridate)
 library(tidyr)
 
 
-raw <- read_abs(cat_no = "6202.0", tables = c("12", "12a", "19", "19a", "22", "23", "23a"), retain_files = F)
+raw <- read_abs(cat_no = "6202.0", tables = c("010", "X28", "X29", "017"), retain_files = F)
 
 states <- c(
   "New South Wales",
@@ -19,25 +19,25 @@ states <- c(
 )
 
 labour_force_status <- raw |>
-  filter(table_no == "6202012" | table_no == "6202012a") |>
+  filter(table_no == "62020010") |>
   separate_series(column_names = c("indicator", "sex", "state"), remove_nas = TRUE)
 
 
 
 hours_worked <- raw  |>
-  filter(table_no == "6202019" | table_no == "6202019a") |>
+  filter(table_no == "62020017") |>
   separate(series, into = c("indicator", "sex", "state"), sep = ";") |>
   mutate(across(c("indicator", "sex"), ~ trimws(gsub(">", "", .))),
          state = ifelse(sex %in%  states, sex, "Australia"),
          sex = ifelse(sex %in% states, "Persons", sex))
 
 underutilisation_aus <- raw |>
-  filter(table_no == 6202022) |>
+  filter(table_no == "62020x29") |>
   separate_series(column_names = c("indicator", "sex", "age"), remove_nas = TRUE)
 
 
 underutilisation_state <- raw |>
-  filter(table_no == "6202023" | table_no == "6202023a",
+  filter(table_no == "62020x28",
          grepl("Underemploy|Underutilisation", series)) |>
   separate(col = series, into = c("indicator", "sex", "state"), sep = ";", extra = "drop") |>
   mutate(across(c("indicator", "sex", "state"), ~ trimws(gsub(">", "", .))),

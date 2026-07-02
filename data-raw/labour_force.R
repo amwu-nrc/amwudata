@@ -4,22 +4,22 @@ library(dplyr)
 library(tidyr)
 library(usethis)
 
-raw <- read_abs(cat_no = "6202.0", tables = c("12", "12a", "22", "23", "23a"), retain_files = FALSE)
+raw <- read_abs(cat_no = "6202.0", tables = c("010", "X28", "X29"), retain_files = FALSE)
 
 labour_force_status <- raw |> 
-  filter(table_no == "6202012" | table_no == "6202012a") |> 
+  filter(table_no == "62020010") |> 
   separate_series(column_names = c("indicator", "sex", "state"), 
                   remove_nas = TRUE) 
 
 
 underutilisation_aus <- raw |> 
-  filter(table_no == 6202022) |> 
+  filter(table_no == "62020x29") |> 
   separate_series(column_names = c("indicator", "sex", "age"), 
                   remove_nas = TRUE)
 
 
 underutilisation_state <- raw |> 
-  filter(table_no == "6202023" | table_no == "6202023a",
+  filter(table_no == "62020x28",
          grepl("Underemploy|Underutilisation", series)) |> 
   separate(series, 
            into = c("indicator", "sex", "state"), 
