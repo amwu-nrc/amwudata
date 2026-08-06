@@ -5,7 +5,7 @@
 \alias{cli}
 \title{Quarterly Living Cost Index}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14052 rows and 5 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 14352 rows and 5 columns.
 }
 \usage{
 cli
