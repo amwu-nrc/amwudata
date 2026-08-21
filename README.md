@@ -15,7 +15,7 @@ the NRC at the Australian Manufacturing Workers Union.
 
 Data is updated at about 11:30am each day.
 
-Data was last updated 2026-08-19
+Data was last updated 2026-08-21
 
 ## Installation
 
@@ -43,8 +43,8 @@ devtools::install_github("amwu-nrc/amwudata")
 | internet_vacancy_regional | Number of online job advertisments by occupation and internet vacancy region | 2025-05-01 |
 | jobseeker_sa2 | Number of individuals recieving a jobseeker payment or youth allowance payment by SA2 region | 2026-03-01 |
 | labour_account | Quarterly time series data across Jobs, Persons, Hours and Payments | 2026-03-01 |
-| labour_force | Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey | 2026-06-01 |
-| labour_force_briefing | A subset of the previous 5 years of the labour force survey | 2026-06-01 |
+| labour_force | Headline estimates of employment, unemployment, underemployment, participation and hours worked from the monthly Labour Force Survey | 2026-07-01 |
+| labour_force_briefing | A subset of the previous 5 years of the labour force survey | 2026-07-01 |
 | payroll_index | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2025-03-15 |
 | payroll_index_business | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2025-03-15 |
 | payroll_index_industry | Weekly payroll job indexes, sourced from Single Touch Payroll data | 2025-03-15 |
